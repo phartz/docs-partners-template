@@ -16,8 +16,8 @@ public_host: hello
 sections:
   - repository:
       name: docs-content
-    directory: myservice
-    subnav_template: myservice_subnav.erb       
+    directory: anynines-consul-dns
+    subnav_template: anynines-consul-dns_subnav.erb
 
 template_variables:                             # optional
 

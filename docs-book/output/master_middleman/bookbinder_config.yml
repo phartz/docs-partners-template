@@ -3,18 +3,18 @@
   ".": 
 :production_host: hello
 :subnav_templates:
-  myservice: myservice_subnav
+  anynines-consul: anynines-consul-dns_subnav
 :template_variables: 
-:local_repo_dir: "/Users/pivotal/workspace/docs-partners-template"
+:local_repo_dir: "/Users/lucaspinto/workspace/src/github.com/anynines/docs-partners-template"
 :workspace: !ruby/object:Pathname
-  path: "/Users/pivotal/workspace/docs-partners-template/docs-book/output/master_middleman/source"
+  path: "/Users/lucaspinto/workspace/src/github.com/anynines/docs-partners-template/docs-book/output/master_middleman/source"
 :feedback_enabled: 
 :repo_link_enabled: true
 :repo_links:
-  myservice:
+  anynines-consul-dns:
     repo: docs-content
     ref: master
     at_path: 
 :product_info:
-  myservice: {}
+  anynines-consul: {}
 :elastic_search: false
