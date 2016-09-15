@@ -3,7 +3,7 @@
   ".": 
 :production_host: hello
 :subnav_templates:
-  anynines-consul: anynines-consul-dns_subnav
+  anynines-consul-dns: anynines-consul-dns_subnav
 :template_variables: 
 :local_repo_dir: "/Users/lucaspinto/workspace/src/github.com/anynines/docs-partners-template"
 :workspace: !ruby/object:Pathname
@@ -16,5 +16,5 @@
     ref: master
     at_path: 
 :product_info:
-  anynines-consul: {}
+  anynines-consul-dns: {}
 :elastic_search: false

@@ -1,23 +1,50 @@
 ---
-title: Installing anynines Consul-DNS
+title: Installing and Configuring the anynines Consul-DNS
 owner: Partners
 ---
 
-This topic describes how to install anynines Consul-DNS.
+This topic describes how to install and configure the anynines Consul-DNS.
 
-##<a id='install'></a> Install anynines Consul-DNS
+##<a id='install'></a> Install the anynines Consul-DNS
 
-1. Download the product file from Pivotal Network.
+1. Download the product file from the Pivotal Network.
 
-2. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
+2. Navigate to the Ops Manager Installation Dashboard and click **Import a Product**
+to upload the product file.
 
-3. Click **Add** next to the uploaded anynines Consul-DNS tile in the Ops Manager **Available Products** view to add it to your staging area.
+3. Click **Add** next to the uploaded anynines Consul-DNS tile in the Ops Manager
+**Available Products** view to add it to your staging area.
 
-4. Click the newly added **anynines Consul-DNS** tile.
+4. Click the newly added tile to review configurable Setting.
 
-5. The only configuration that can be done here is the default one (AZs, networks, nameservers, resources, stemcells).
+5. Click **Apply Changes** to deploy the service.
 
-6. Click **Save**.
 
-7. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install anynines Consul-DNS tile.
+##<a id='configure'></a> Configure the anynines Consul-DNS
 
+1. Select the anynines Consul-DNS tile.
+
+2. Select the Upstream Nameservers panel.
+
+3. Fill the general upstream nameservers field with a list of nameservers that
+will be used to resolve DNS queries of hosts which are not included in the rules
+specifed in "Domain specific nameservers". In this case, we are using the
+Google Public DNS.
+<br />
+<a href="../images/general-upstream-nameservers-config.png" target="_blank">
+<img src="../images/general-upstream-nameservers-config.png" alt="screenshot of upstream nameservers configuration" />
+</a>
+
+4. Click the **Add** button on the right side of the form to add a domain
+specific nameservers configuration.
+
+5. Fill the domain field with a domain that will be resolved by the nameservers
+you must enter in nameservers field.
+<br />
+<a href="../images/domain-specific-nameservers-config.png" target="_blank">
+<img src="../images/domain-specific-nameservers-config.png" alt="Screenshot of domain specific nameservers configuration" />
+</a>
+
+6. If needed, repeat 4. and 5. for each domain you want to use.
+
+7. Click **Save**
