@@ -1,31 +1,53 @@
 ---
-title: Installing and Configuring the anynines MongoDB service
+title: Installing and Configuring the a9s Dedicated MongoDB
 owner: Partners
 ---
 
-This topic describes how to install and configure the anynines MongoDB service.
+This topic describes how to install and configure the a9s Dedicated MongoDB.
 
-##<a id='install'></a> Install the anynines MongoDB service
+##<a id='install'></a> Install the a9s Dedicated MongoDB
 
 1. Download the product file from the Pivotal Network.
 
 2. Navigate to the Ops Manager Installation Dashboard and click **Import a Product**
 to upload the product file.
 
-3. Click **Add** next to the uploaded anynines MongoDB Service tile in the Ops Manager
+3. Click **Add** next to the uploaded a9s Dedicated MongoDB tile in the Ops Manager
 **Available Products** view to add it to your staging area.
 
 4. Click the newly added tile to review configurable Setting.
 
 5. Click **Apply Changes** to deploy the service.
 
-##<a id='configure'></a> Configure the anynines MongoDB service
+##<a id='configure'></a> Configure the a9s Dedicated MongoDB
 
 The service is delivered with all the configuration you need.
 
 Nonetheless, we'll explain what the Errands panel is useful for:
 
-* Run BOSH Configurator
-* Run Template Uploader
-* Run Broker Registrar
-* Run Broker Deregistrar
+### Run BOSH Configurator
+This errand configures the a9s BOSH tile so that this
+tile can deploy MongoDB instances. In detail, this means uploading the required
+stemcells in BOSH release. Deactiviting this errand could speed up the
+deployment of all tiles.
+
+In order to keep the configuration up-to-date we
+don't recommand de-activating this command.
+
+### Run Template Uploader
+This errand is required to configure generic components
+that are included in the MongoDB tile with MongoDB specific configuration.
+Deactiviting this errand could speed up the deployment of all tiles.
+
+In order to keep the configuration up-to-date we don't recommand de-activating
+this command.
+
+### Run Broker Registrar
+This errand will register the a9s MongoDB service broker
+on the Elastic Runtime so that the service becomes available in the Runtime's
+Marketplace.
+
+### Run Broker Deregistrar
+This will deregister the a9s service broker on the Elastic Runtime so that the service
+offering gets deleted when you delete the tile.
+

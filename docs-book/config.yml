@@ -16,8 +16,8 @@ public_host: hello
 sections:
   - repository:
       name: docs-content
-    directory: anynines-mongodb-service
-    subnav_template: anynines-mongodb-service_subnav.erb
+    directory: a9s-dedicated-mongodb
+    subnav_template: a9s-dedicated-mongodb_subnav.erb
 
 template_variables:                             # optional
 

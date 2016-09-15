@@ -3,7 +3,7 @@
   ".": 
 :production_host: hello
 :subnav_templates:
-  anynines-mongodb-service: anynines-mongodb-service_subnav
+  a9s-dedicated-mongodb: a9s-dedicated-mongodb_subnav
 :template_variables: 
 :local_repo_dir: "/Users/lucaspinto/workspace/src/github.com/anynines/docs-partners-template"
 :workspace: !ruby/object:Pathname
@@ -11,10 +11,10 @@
 :feedback_enabled: 
 :repo_link_enabled: true
 :repo_links:
-  anynines-mongodb-service:
+  a9s-dedicated-mongodb:
     repo: docs-content
     ref: master
     at_path: 
 :product_info:
-  anynines-mongodb-service: {}
+  a9s-dedicated-mongodb: {}
 :elastic_search: false

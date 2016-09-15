@@ -3,8 +3,8 @@ title: anynines MongoDB service
 owner: Partners
 ---
 
-The anynines MongoDB service allows to automate the lifecycle management of an
-arbitrary number of MongoDB instances. The anynines MongoDB service provides a
+The a9s Dedicated MongoDB allows to automate the lifecycle management of an
+arbitrary number of MongoDB instances. The a9s Dedicated MongoDB provides a
 Cloud Foundry Service Broker to create service instances, create service
 bindings (credentials), delete service bindings (credentials) and deprovision
 service instances. All theses tasks will be done without any manual
@@ -12,9 +12,14 @@ intervention. Automatically created MongoDB instances are isolated from another
 through dedicated virtual machines and optionally highly available through
 MongoDB replica sets.
 
+
+This means that whenever a user executes ```cf create-service a9s-mongodb ...```,
+dedicated virtual machines are created for this service instance. This allows
+the best possible "bad neighborhood protection".
+
 ## <a id='overview'></a>Overview
 
-The anynines MongoDB service includes the following key features:
+The a9s Dedicated MongoDB includes the following key features:
 
 * On-demand Service Instance Provisioning
 * Service Instance Isolation
@@ -23,7 +28,7 @@ The anynines MongoDB service includes the following key features:
 ## <a id="snapshot"></a>Product Snapshot
 
 <dl>
-<dt>anynines MongoDB service Details:</dt>
+<dt>a9s Dedicated MongoDB Details:</dt>
 <dd><strong>Version</strong>: v1.0.0 </dd>
 <dd><strong>Release Date</strong>: September 1, 2016</dd>
 <dd><strong>Compatible Ops Manager Versions:</strong> 1.7.x</dd>
@@ -42,8 +47,8 @@ minimal version:
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to contact@anynines.com. (TODO: confirm)
+Please provide any bugs, feature requests, or questions to svc.support@anynines.com.
 
 ## <a id='license'></a>License
 
-(TODO: confirm)
+See [data-services.anynines.com/sales](http://data-services.anynines.com/sales)
