@@ -1,0 +1,30 @@
+---
+title: anynines MongoDB service features
+owner: Partners
+---
+
+This topic describes the service features more in depth.
+
+## On­demand Service Instance Provisioning
+
+* A MongoDB is deployed fully automatically. A single VM MongoDB server or a
+multi­MV MongoDB Replica Set can be provisioned by developers with a **single
+command**.
+
+## Service Instance Isolation
+
+* Each MongoDB server runs on a **dedicated virtual machine** to ensure "**bad
+neighborhood protection**" in order to be aligned with enterprise security
+requirements.
+
+* Cloud Foundry **security groups** are used to prevent that a **network
+connection** can be established by **unauthorized applications**.
+
+
+## High Availability
+
+* High availability is ensured through MongoDB **Replica Sets**.
+
+* The **Consul based internal DNS system** delivered by the anynines Consul-DNS
+ensures that the connected application always connects to a working node.
+

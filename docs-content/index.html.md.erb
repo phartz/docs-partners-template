@@ -3,15 +3,22 @@ title: anynines MongoDB service
 owner: Partners
 ---
 
-The anynines MongoDB Service provides...
+The anynines MongoDB service allows to automate the lifecycle management of an
+arbitrary number of MongoDB instances. The anynines MongoDB service provides a
+Cloud Foundry Service Broker to create service instances, create service
+bindings (credentials), delete service bindings (credentials) and deprovision
+service instances. All theses tasks will be done without any manual
+intervention. Automatically created MongoDB instances are isolated from another
+through dedicated virtual machines and optionally highly available through
+MongoDB replica sets.
 
 ## <a id='overview'></a>Overview
 
 The anynines MongoDB service includes the following key features:
 
-* Feature one.
-* Feature two.
-* Feature three.
+* On-demand Service Instance Provisioning
+* Service Instance Isolation
+* High Availability
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -19,22 +26,24 @@ The anynines MongoDB service includes the following key features:
 <dt>anynines MongoDB service Details:</dt>
 <dd><strong>Version</strong>: v1.0.0 </dd>
 <dd><strong>Release Date</strong>: September 1, 2016</dd>
-<dd><strong>vSphere support?</strong> YES-OR-NO</dd>
-<dd><strong>OpenStack support?</strong> YES-OR-NO</dd>
-<dd><strong>AWS support?</strong> YES-OR-NO</dd>
+<dd><strong>Compatible Ops Manager Versions:</strong> 1.7.x</dd>
+<dd><strong>Compatible Elastic Runtime Versions:</strong> 1.6.x, 1.7.x</dd>
+<dd><strong>vSphere support?</strong> Yes</dd>
 </dl>
 
 ## <a id="reqs"></a>Requirements
 
-There are so far no requirements for the usage of this tile.
+For this service to work you will need the following products, given with their
+minimal version:
 
-## <a id="limitations"></a>Limitations
+* anynines Consul-DNS (1.0.0.0)
+* anynines BOSH (1.0.0.0)
+* Elastic Runtime (1.6)
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to contact@anynines.com
+Please provide any bugs, feature requests, or questions to contact@anynines.com. (TODO: confirm)
 
 ## <a id='license'></a>License
 
-**List any license information here.**
-
+(TODO: confirm)
