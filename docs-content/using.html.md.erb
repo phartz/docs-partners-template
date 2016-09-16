@@ -7,8 +7,52 @@ This topic describes how to use the a9s Dedicated MongoDB.
 
 ##<a id='using'></a> Using the a9s Dedicated MongoDB
 
-* cf create-service
-* cf bs
-* cf env
-* cf us
-* cf ds
+Once you have installed the tile, you can use the MongoDB service:
+
+* we see here that the service is now available in the marketplace
+
+```
+$ cf marketplace
+Getting services from marketplace in org test / space test as admin...
+OK
+
+service            plans                                                                                  description
+a9s-mongodb        mongodb-single-small, mongodb-cluster-small, mongodb-single-big, mongodb-cluster-big   This is the anynines mongodb 32 service.
+```
+
+* we can then create a service instance
+
+```
+$ cf create-service a9s-mongodb mongodb-single-small small-mongodb-single
+Creating service instance small-mongodb-single in org test / space test as admin...
+OK
+
+Create in progress. Use 'cf services' or 'cf service small-mongodb-single' to check operation status.
+```
+
+* and bind it to an app
+
+```
+$ cf bind-service a9s-mongodb-app small-mongodb-single                                                                                                                    !10253
+Binding service small-mongodb-single to app a9s-mongodb-app in org test / space test as admin...
+OK
+TIP: Use 'cf restage small-mongodb-single' to ensure your env variable changes take effect
+```
+
+* we can now see the environment varibles associated to the app (host, username, password, etc.)
+
+```
+$ cf env small-mongodb-single
+```
+
+* we will finish by unbinding the service
+
+```
+$ cf unbind-service a9s-mongodb-app small-mongodb-single
+```
+
+* and delete the service instance
+
+```
+cf delete-service small-mongodb-single
+```
