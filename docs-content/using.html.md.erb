@@ -25,6 +25,9 @@ within the Elastic Runtime.
 3. Click on the **status** tab.
 
 4. Note the IP adresses of the dnsmasqs.
+<a href="../images/consul-dns-status-tab.png">
+<img src="../images/consul-dns-status-tab.png" alt="Consul-DNS status tab with dnsmasq IPs" />
+</a>
 
 5. Go back to the PCF Ops Manager tiles overview.
 
@@ -37,5 +40,10 @@ within the Elastic Runtime.
 9. Replace the entry for DNS with the IPs of your dnsmasq VMs that doesn't
 belong to the same subnet.
 
-TODO: add pictures
+As you can see on this picture, the subnet belongs to a subnet which IPs are
+comprised in the CIDR x.x.x.x/x. This means that it includes the IP of the
+dnsmasq X, x.x.x.x, so we'll exclude this one.
+<a href="../images/create-network.png">
+<img src="../images/create-network.png" alt="Create Network category with DNS field" />
+</a>
 
