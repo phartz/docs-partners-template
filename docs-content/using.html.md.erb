@@ -19,13 +19,21 @@ within the Elastic Runtime.
 ## Registering the service within the Elastic Runtime
 
 1. Open the PCF Ops Manager.
+
 2. Click on the **a9s Consul-DNS** tile.
+
 3. Click on the **status** tab.
+
 4. Note the IP adresses of the dnsmasqs.
+
 5. Go back to the PCF Ops Manager tiles overview.
-6. Click on the **Ops Director** tile.
+
+6. Click on the **Ops Manager Director** tile.
+
 7. Open the **Create Network** category.
-8. Open **your subnets task**.
+
+8. Under *networks*, open your **subnets** tabs.
+
 9. Replace the entry for DNS with the IPs of your dnsmasq VMs that doesn't
 belong to the same subnet.
 
