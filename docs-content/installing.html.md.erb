@@ -7,18 +7,35 @@ This topic describes how to install and configure anynines BOSH.
 
 ##<a id='install'></a> Install and Configure anynines BOSH
 
-1. Download the product file from Pivotal Network.
+1. Download the product file from the Pivotal Network.
 
-1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file. 
+2. Navigate to the Ops Manager Installation Dashboard and click **Import a Product**
+to upload the product file.
 
-1. Click **Add** next to the uploaded anynines BOSH tile in the Ops Manager **Available Products** view to add it to your staging area.
+3. Click **Add** next to the uploaded a9s Dedicated MongoDB tile in the Ops Manager
+**Available Products** view to add it to your staging area.
 
-1. Click the newly added **anynines BOSH** tile.
+4. Click the newly added tile to review configurable Setting.
 
-1. **This portion of the procedure should tell the users how to configure the newly added tile by walking them through the sections. Which fields should they fill out? What are the different checkboxes? Include relevant screenshots here.** 
+5. Click **Apply Changes** to deploy the service.
 
-1. Click **Save**.
+##<a id='configure'></a> Configure anynines BOSH
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install anynines BOSH tile.
+Once you have installed the anynines BOSH, you will have to configure it
+in order to be able to use it. This happens in the **IaaS Setting** category of
+the **Settings** tab of the tile.
 
-**If needed, include additional configuration information below. For example, maybe there are configuration options not required for installation but which could be useful for certain users.**
+There, you will be able to specify which IaaS you are between AWS, OpenStack and
+VSphere and will then have to fill the fields corresponding to your IaaS.
+
+<a href="../images/iaas-data.png">
+<img src="../images/iaas-data.png" alt="IaaS Form">
+</a>
+
+Lastly, comes the cloud-config data that are going to be uploaded to the BOSH
+Director.
+
+<a href="../images/iaas-data.png">
+<img src="../images/cloud-config.png" alt="Cloud Config Form">
+</a>
+

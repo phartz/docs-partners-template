@@ -3,19 +3,11 @@ title: anynines BOSH
 owner: Partners
 ---
 
-**This topic should begin with a brief description of your product. See below for an example.**
+The anynines BOSH tile is required by the a9s Dedicated MongoDB to create the
+VMs for each instance.
 
-This documentation describes the Redis Labs Enterprise Cluster (RLEC) Service Broker for Pivotal Cloud Foundry (PCF). The RLEC Service Broker registers a service broker on PCF and exposes its service plans on the Marketplace. Developers can provision Redis databases by creating instances of the service plans using Apps Manager or the cf Command Line Interface (CLI).
-
-## <a id='overview'></a>Overview
-
-**The overview should provide a description of the product's key features.**
-
-anynines BOSH includes the following key features:
-
-* Feature one.
-* Feature two.
-* Feature three.
+anynines provides highly available dedicated shared services and needs its own
+BOSH Director to built them.
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -24,8 +16,8 @@ anynines BOSH includes the following key features:
 <dd><strong>Version</strong>: v1.0.0. </dd>
 <dd><strong>Release Date</strong>: September 1, 2016</dd>
 <dd><strong>Software component version</strong>: vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.6.x, v1.7.x)</dd>
-<dd><strong>Compatible Elastic Runtime Version(s)</strong>: vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.4.x, v1.5.x, v1.6.x)</dd>
+<dd><strong>Compatible Ops Manager Versions</strong>: v1.7.x</dd>
+<dd><strong>Compatible Elastic Runtime Versions</strong>: v1.6.x</dd>
 <dd><strong>vSphere support?</strong> YES-OR-NO</dd>
 <dd><strong>OpenStack support?</strong> YES-OR-NO</dd>
 <dd><strong>AWS support?</strong> YES-OR-NO</dd>
@@ -33,17 +25,16 @@ anynines BOSH includes the following key features:
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here. A general requirement might be something like, "An AppDynamics account." A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+For this service to work you will need the following product, given with its
+minimal version:
 
-## <a id="limitations"></a>Limitations
-
-**List any known limitations.**
+* anynines Consul-DNS (1.0.0.0)
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+Please provide any bugs, feature requests, or questions to svc.support@anynines.com.
 
 ## <a id='license'></a>License
 
-**List any license information here.**
+See [data-services.anynines.com/sales](http://data-services.anynines.com/sales)
 
