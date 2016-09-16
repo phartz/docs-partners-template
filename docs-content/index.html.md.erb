@@ -1,16 +1,25 @@
 ---
-title: anynines MongoDB service
+title: a9s Dedicated MongoDB service
 owner: Partners
 ---
 
-The a9s Dedicated MongoDB allows to automate the lifecycle management of an
-arbitrary number of MongoDB instances. The a9s Dedicated MongoDB provides a
-Cloud Foundry Service Broker to create service instances, create service
-bindings (credentials), delete service bindings (credentials) and deprovision
-service instances. All theses tasks will be done without any manual
-intervention. Automatically created MongoDB instances are isolated from another
-through dedicated virtual machines and optionally highly available through
-MongoDB replica sets.
+The a9s Dedicated MongoDB service enables the on-demand creation of dedicated
+MongoDB servers and clusters. Depending on the chosen service plan a service
+instance is represented by a single, dedicated virtual machine or a set of VMs
+consisting of multiple (e.g. three) virtual machines comprising a MongoDB
+replica set cluster. The provisioning of MongoDB service instances including the
+virtual machine orchestration is entirely automated. This way service instances
+are highly isolated and shielded by proven infrastructure virtualization
+mechanisms.
+
+
+Due to the on-demand provisioning on virtual machines, only existing service
+instances allocate infrastructure resources which will be released when service
+instances are destroyed.
+
+Spread across several infrastructure availability zones, the clustered data
+service plans enable very short failover times and a strong resilience against
+failures of individual infrastructure host or even entire availability zones.
 
 
 This means that whenever a user executes ```cf create-service a9s-mongodb ...```,
