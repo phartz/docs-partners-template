@@ -10,8 +10,8 @@ Dedicated MongoDB tile is installed.
 ##<a id='using'></a> Using the a9s Dedicated MongoDB within an application
 
 To make use of the a9s Dedicated MongoDB within one of your
-applications, you will have to do two things: **provide** a service instance and
-**bind** it to your application. You can find [More here](https://docs.cloudfoundry.org/devguide/services/managing-services.html) on how to manage service instances.
+applications, you will have to do two things: **provision** a service instance
+and **bind** it to your application. You can find [More here](https://docs.cloudfoundry.org/devguide/services/managing-services.html) on how to manage service instances.
 
 
 When the tile is installed, you can see the *a9s-mongodb* and its service
@@ -27,23 +27,25 @@ service            plans                                                        
 a9s-mongodb        mongodb-single-small, mongodb-cluster-small, mongodb-single-big, mongodb-cluster-big   This is the anynines mongodb 32 service.
 ```
 
-
 This means that you can create a MongoDB database that will be defined by one of
 the given plans. For the purpose of this tutorial, we'll create a *mongodb-
 single-small* service.
 
 
 ### Provisioning
+
 A database can be provisioned with the `cf create-service` command (aliased
 `cf cs`):
 
 ```
 $ cf create-service a9s-mongodb mongodb-single-small my-mongodb-service
-Creating service instance my-mongodb-service in org test / space test as admin...
-OK
-
-Create in progress. Use 'cf services' or 'cf service my-mongodb-service' to check operation status
 ```
+
+It can take a while for the service to be created. As the prompt tells you, you
+can check the operation status with the commands either by displaying all
+your services and their status with the `cf services` (aliased `cf s`) or by
+checking specifically the status of your service, in our case with `cf service
+my-mongodb-service`.
 
 
 ### Binding
@@ -53,16 +55,14 @@ Once your database is done being created, you can bind it to your app with the
 
 ```
 $ cf bind-service a9s-mongodb-app my-mongodb-service                                                                                                                  !10350
-Binding service my-mongodb-service to app a9s-mongodb-app in org test / space test as admin...
-OK
-TIP: Use 'cf restage a9s-mongodb-app' to ensure your env variable changes take effect
 ```
 
-As the prompt explains it, you will need to restage (or restart) your application
-to be able to use the database.
+As the prompt explains it, you will need to restage or restart your application
+to be able to use the database with respectivly the `cf restage` and `cf restart`
+commands.
 
 
-##<a id='deleting'></a> Deleting an a9s Dedicated MongoDB service
+##<a id='deleting'></a> Deleting an a9s Dedicated MongoDB service instance
 
 **Before deleting your MongoDB service, i.e. database, think that all the data it
 is containing will be lost.**
@@ -70,7 +70,10 @@ is containing will be lost.**
 Before you can be able to delete your service, you will have to unbind it from
 all the applications it was bound to.
 
-If I list my services, I see that my *my-mongodb-service* is bound to my *a9s-
+
+### Unbinding
+
+If we list our services, we see that my *my-mongodb-service* is bound to the *a9s-
 mongodb-app* application.
 
 ```
@@ -82,33 +85,33 @@ name                 service       plan                   bound apps        last
 my-mongodb-service   a9s-mongodb   mongodb-single-small   a9s-mongodb-app   create succeeded
 ```
 
-I will then unbind it with the `cf unbind-service` command (aliased `cf us`),
+
+Unbinding works with the `cf unbind-service` command (aliased `cf us`),
 which can take up to a few seconds:
 
 ```
 $ cf unbind-service a9s-mongodb-app my-mongodb-service
-Unbinding app a9s-mongodb-app from service my-mongodb-service in org test / space test as admin...
-OK
 ```
 
-Only then, can I delete the service instance with the `cf delete-service`
-command (aliased `cf ds`):
+
+### Deleting
+Now that the service instance is not bound to any applications anymore, we can
+delete it with the `cf delete-service` command (aliased `cf ds`):
 
 ```
 $ cf delete-service my-mongodb-service                                                                                                                                !10318
-
-Really delete the service my-mongodb-service?> yes
-Deleting service my-mongodb-service in org test / space test as admin...
-OK
-
-Delete in progress. Use 'cf services' or 'cf service my-mongodb-service' to check operation status.
 ```
+
+The deletion of a service also can last a couple of minutes. You can check the
+operation status the same way you can do it for the creation, either by checking
+the status of all services with the `cf services` command or by checking the
+status of your application, in our case with `cf service my-mongodb-service`.
 
 
 ##<a id='credentials'></a> Getting the credentials
 
-Once you service is bind to your application, the credentials of your MongoDB
-database can be found it the environment variables of the application. You can
+Once your service is bound to your application, the credentials of your MongoDB
+database can be found in the environment variables of the application. You can
 display them with the `cf env` command. The credentials are to be found under
 the [VCAP_SERVICES](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES) key.
 
