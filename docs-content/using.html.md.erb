@@ -23,36 +23,75 @@ a9s-mongodb        mongodb-single-small, mongodb-cluster-small, mongodb-single-b
 * we can then create a service instance
 
 ```
-$ cf create-service a9s-mongodb mongodb-single-small small-mongodb-single
-Creating service instance small-mongodb-single in org test / space test as admin...
+$ cf create-service a9s-mongodb mongodb-single-small my-mongodb-service
+Creating service instance my-mongodb-service in org test / space test as admin...
 OK
 
-Create in progress. Use 'cf services' or 'cf service small-mongodb-single' to check operation status.
+Create in progress. Use 'cf services' or 'cf service my-mongodb-service' to check operation status
 ```
 
 * and bind it to an app
 
 ```
-$ cf bind-service a9s-mongodb-app small-mongodb-single                                                                                                                    !10253
-Binding service small-mongodb-single to app a9s-mongodb-app in org test / space test as admin...
+$ cf bind-service a9s-mongodb-app my-mongodb-service                                                                                                                  !10350
+Binding service my-mongodb-service to app a9s-mongodb-app in org test / space test as admin...
 OK
-TIP: Use 'cf restage small-mongodb-single' to ensure your env variable changes take effect
+TIP: Use 'cf restage a9s-mongodb-app' to ensure your env variable changes take effect
 ```
 
 * we can now see the environment varibles associated to the app (host, username, password, etc.)
 
 ```
-$ cf env small-mongodb-single
+$ cf env a9s-mongodb-app
+Getting env variables for app a9s-mongodb-app in org test / space test as admin...
+OK
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "a9s-mongodb": [
+   {
+    "credentials": {
+     "default_database": "d22906",
+     "hosts": [
+      "d22906-mongod-avl1-0.node.dc1.a9svs:27017"
+     ],
+     "password": "a9sf0d07af6823b7684bd326c1c514f56f8341fd893",
+     "uri": "mongodb://a9s-brk-usr-15b5ba10d0153256d9542bfb50e4009c6f62e635:a9sf0d07af6823b7684bd326c1c514f56f8341fd893@d22906-mongod-avl1-0.node.dc1.a9svs:27017/d22906",
+     "username": "a9s-brk-usr-15b5ba10d0153256d9542bfb50e4009c6f62e635"
+    },
+    "label": "a9s-mongodb",
+    "name": "my-mongodb-service",
+    "plan": "mongodb-single-small",
+    "tags": [
+     "nosql",
+     "database",
+     "document store",
+     "eventual consistent"
+    ]
+   }
+  ]
+ }
+}
+...
 ```
 
 * we will finish by unbinding the service
 
 ```
-$ cf unbind-service a9s-mongodb-app small-mongodb-single
+$ cf unbind-service a9s-mongodb-app my-mongodb-service
+Unbinding app a9s-mongodb-app from service my-mongodb-service in org test / space test as admin...
+OK
 ```
 
 * and delete the service instance
 
 ```
-cf delete-service small-mongodb-single
+$ cf delete-service my-mongodb-service                                                                                                                                !10318
+
+Really delete the service my-mongodb-service?> yes
+Deleting service my-mongodb-service in org test / space test as admin...
+OK
+
+Delete in progress. Use 'cf services' or 'cf service my-mongodb-service' to check operation status.
 ```
