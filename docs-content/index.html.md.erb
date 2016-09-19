@@ -1,17 +1,18 @@
 ---
-title: anynines Consul-DNS
+title: a9s Consul DNS
 owner: Partners
 ---
 
-*Consul* is a distributed highly-available system that makes it simple for
-services to register themselves and to discover other services via a DNS or HTTP
-interface.
+The a9s Consul DNS tile provides a highly available DNS service including a
+*Consul* cluster as well as additional *dnsmasq* servers meant to be used for
+service discovery and service failover procedures.
 
-This tile includes a cluster of *Consul* server and additional *dnsmasq* servers
-used for service discovery.
+*Consul* is a highly available service discovery and configuration tool including
+features such as failure detection, a HA key/value storage as well as an HA DNS service
+which be remotely controlled via HTTP based REST interface.
 
-This service is required by the *a9s Dedicated MongoDB* to advertise its service
-instances and service broker to the Elastic Runtime.
+This service is used and required by the *a9s Dedicated MongoDB* to advertise its service
+instances and service broker to the Cloud Foundry elastic runtime.
 
 ## <a id="snapshot"></a>Product Snapshot
 
